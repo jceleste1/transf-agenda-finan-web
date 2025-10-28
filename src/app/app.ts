@@ -4,12 +4,14 @@ import { MatToolbarModule}  from '@angular/material/toolbar';
 import { Footer } from './components/template/footer/footer';
 import { Header } from './components/template/header/header';
 import { Nav } from './components/template/nav/nav';
+import { Home } from './view/home/home';
+
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Header,Footer,Nav],
+  imports: [RouterOutlet,Header,Footer,Nav,Home],
   templateUrl: 'app.component.html',
 })
 export class App {

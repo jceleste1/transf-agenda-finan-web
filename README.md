@@ -90,3 +90,12 @@ ng g c components/template/nav
 >> Criando componente home
 ng g c view/home
 
+
+>> Criando componente transferencia
+ng g c view/transferencia
+
+
+>> Criando Directives
+ng g d  directives/red
+
+
