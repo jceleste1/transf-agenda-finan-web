@@ -7,7 +7,6 @@ import { Nav } from './components/template/nav/nav';
 
 
 
-
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,Header,Footer,Nav],
