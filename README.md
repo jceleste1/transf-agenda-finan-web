@@ -61,7 +61,19 @@ For more information on using the Angular CLI, including detailed command refere
 
 
 =======================================================
+>> Criar backend
+> 
+npm init -y
 
+> altera arquivo package.json  na linha 7
+    "start": "json-server --watch db.json --port 3001"
+
+> Instalar json server
+npm i json-server
+
+> start server
+npm start
+======================
 >> install angular
 npm i -g @angular/cli
 
@@ -98,4 +110,7 @@ ng g c view/transferencia
 >> Criando Directives
 ng g d  directives/red
 
+
+>> Criando Service transferencia
+ng g s components/transferencia/transferencias
 

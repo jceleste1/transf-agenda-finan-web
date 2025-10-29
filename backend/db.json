@@ -1,0 +1,19 @@
+{
+  "transferencias": [
+    {
+      "id": 1,
+      "name": "a",
+      "contaOrigem": "001"
+    },
+    {
+      "id": 2,
+         "name": "b",
+      "contaOrigem": "003"
+    },
+    {
+      "id": 3,
+           "name": "c",
+      "contaOrigem": "004"
+    }
+  ]
+}

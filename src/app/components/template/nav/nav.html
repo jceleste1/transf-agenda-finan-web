@@ -3,20 +3,32 @@
         fixedInViewport="true" fixedTopGap="64">
         <mat-nav-list class="nav-list">
           
+              <a mat-list-item routerLink="/">
                 <i class="material-icons">
                     home
                 </i>
                 Início
+                </a>
           
-          
-                <i class="material-icons">
-                    storefront
-                </i>
-                Produtos
-           
+
+                <a mat-list-item  routerLink="/transferencia">
+                    <i class="material-icons">
+                        storefront
+                    </i>
+                      Tranferencia
+                 </a>
+
+
+               <a mat-list-item  routerLink="/transferencia2Component">
+                    <i class="material-icons">
+                        storefront
+                    </i>
+                      Tranferencia 2
+                 </a>
+
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="content">
-       <app-home> </app-home>
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
