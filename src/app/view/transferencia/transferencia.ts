@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import { AfterContentInit, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { TransferenciaService } from '../../components/transferencia/services/transferencia-service';
 import { TransferenciaDTO } from './models/transferencia.model';
@@ -12,18 +12,17 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-transferencia',
-  imports: [ MatTable,  MatPaginatorModule, MatPaginator , MatTableModule],
+  imports: [MatTableModule, MatPaginatorModule, MatSortModule],
   templateUrl: './transferencia.html',
   styleUrl: './transferencia.css',
 })
-export class Transferencia  implements OnInit {
+export class Transferencia  implements OnInit, AfterViewInit{
 
-  constructor(private router: Router  ,   private http: HttpClient , private transferenciaService:   TransferenciaService ) {
+  constructor(private router: Router  , private transferenciaService:   TransferenciaService ) {
   
-   
   
   }
-
+  @ViewChild(MatTable) table!: MatTable<TransferenciaDTO>;
 
   displayedColumns: string[] =  ['id', 'name', 'contaOrigem' ]
   baseUrl = "http://localhost:3001/transferencias";
@@ -31,11 +30,20 @@ export class Transferencia  implements OnInit {
 
    
   ngOnInit(): void { 
+    
+  }
+
+
+ ngAfterViewInit(): void { 
       this.transferenciaService.read().subscribe(data => {
           this.dataSource = data;
         }
       );
+
+      this.table.dataSource = this.dataSource;
   }
+
+
 
    cancel(): void {
     this.router.navigate(["" ]) ;
@@ -43,6 +51,3 @@ export class Transferencia  implements OnInit {
 
  }
 
-function ngAfterContentChecked() {
-  throw new Error('Function not implemented.');
-}
