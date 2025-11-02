@@ -18,7 +18,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Transferencia  implements OnInit, AfterViewInit{
 
-  constructor(private router: Router  , private transferenciaService:   TransferenciaService ) {
+  constructor(private router: Router  ,  private changeDetectorRefs: ChangeDetectorRef,  private transferenciaService:   TransferenciaService ) {
   
   
   }
@@ -37,6 +37,7 @@ export class Transferencia  implements OnInit, AfterViewInit{
  ngAfterViewInit(): void { 
       this.transferenciaService.read().subscribe(data => {
           this.dataSource = data;
+            this.changeDetectorRefs.detectChanges();
         }
       );
 
