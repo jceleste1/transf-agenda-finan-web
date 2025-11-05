@@ -41,6 +41,31 @@ export class TransferenciaService {
       catchError((e) => this.errorHandler(e))
     );
   }
+
+  
+  readById(id: number): Observable<TransferenciaDTO> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<TransferenciaDTO>(url).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
+  update(product: TransferenciaDTO): Observable<TransferenciaDTO> {
+    const url = `${this.baseUrl}/${product.id}`;
+    return this.http.put<TransferenciaDTO>(url, product).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
+  delete(id: number): Observable<TransferenciaDTO> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.delete<TransferenciaDTO>(url).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
   
 
   errorHandler(e: any): Observable<any> {

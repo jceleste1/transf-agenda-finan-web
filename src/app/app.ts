@@ -13,6 +13,8 @@ import { Transferencia2Component } from './components/transferencia/transferenci
 import { CommonModule } from '@angular/common'; // IMPORTAR O CommonModule, caso o Browser Module não o esteja exportando no contexto do seu projeto.
 import { provideHttpClient } from '@angular/common/http';
 import { TransferenciaService } from './components/transferencia/services/transferencia-service';
+import { RouterModule } from '@angular/router';
+ import { RouterLink } from '@angular/router';
 
 
 @Component({
@@ -22,6 +24,8 @@ import { TransferenciaService } from './components/transferencia/services/transf
   MatTableModule,
   MatFormFieldModule,
   MatInputModule, 
+  RouterModule ,
+  RouterLink,
   Header,
   Footer,
   CommonModule,
@@ -30,7 +34,7 @@ import { TransferenciaService } from './components/transferencia/services/transf
   Transferencia,
   Transferencia2Component],
   templateUrl: 'app.component.html',
-  providers: [TransferenciaService], // <- add here!
+  providers: [TransferenciaService,RouterLink], // <- add here!
   
 })
 export class App {

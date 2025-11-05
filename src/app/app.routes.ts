@@ -13,9 +13,17 @@ export const routes: Routes = [
   {  
     path: "transferencia", component: Transferencia
   },
-
-   {  
+  {  
     path: "transferencia2Component", component: Transferencia2Component
-  }
+  },
+  {  
+    path: "transferencia/delete/:id", component: Transferencia
+  },
+  {  
+    path: "transferencia/update/:id", component: Transferencia
+  },
   
   ];
+
+
+  
